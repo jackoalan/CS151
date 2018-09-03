@@ -1,3 +1,8 @@
+/**
+ * Clock arithmetic
+ * Jack Andersen
+ */
+
 #include <cstdlib>
 #include <algorithm>
 #include <iostream>

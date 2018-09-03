@@ -1,3 +1,8 @@
+/**
+ * Clock arithmetic
+ * Jack Andersen
+ */
+
 #pragma once
 #include <iostream>
 
