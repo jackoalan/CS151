@@ -102,12 +102,20 @@ int main(int argc, char** argv) {
       istringstream tmp(s);
       int i, j;
       tmp >> i >> j;
+      if (i > j) {
+        cout << "i must be <= j" << endl;
+        continue;
+      }
       if (tmp.fail()) {
         cout << "Invalid input format" << endl;
-        return 1;
+        continue;
       }
       inPairs.push_back(Lab1::InputPair{i, j});
     }
   }
+
+  cout << "Press any key to exit" << endl;
+  cin.get();
+
   return 0;
 }

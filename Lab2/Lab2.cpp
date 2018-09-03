@@ -100,5 +100,6 @@ int main(int argc, char** argv) {
     }
     cout << clk << endl;
   }
+
   return 0;
 }
