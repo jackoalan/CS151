@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.0)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+project(Lab3)
+add_executable(lab3 Lab3.cpp Lab3.hpp Lab2.cpp Lab2.hpp)
