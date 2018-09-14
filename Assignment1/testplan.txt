@@ -1,0 +1,116 @@
+Verify the following output occurs after the numbered steps
+
+1. <start-game>
+You have 0 points.
+This is a road. It runs north-to-south. Your car is parked nearby.
+2. help
+'look' for area description
+'map' for map
+'points' for score
+'n'|'e'|'s'|'w' to move
+'quit' to quit
+3. map
+[ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ]
+[X][ ][ ][ ][ ]
+4. w
+You run into an arbitrarily-placed forcefield. How annoying!
+5. n
+This is a road. It runs north-to-south.
+6. n
+This is a road. It runs north-to-south.
+7. n
+Hey! A zip-line rental shop. Sounds like a good way to spend your afternoon.
+A sign instructs you to 'rent'.
+8. n
+This is a road. It runs north-to-south.
+9. n
+You run into an arbitrarily-placed forcefield. How annoying!
+10. s
+Hey! A zip-line rental shop. Sounds like a good way to spend your afternoon.
+A sign instructs you to 'rent'.
+11. rent
+You sign a 56-page rental agreement in exchange for the zip-line equipment.
+There's a strict 10-tile rental term according to the fine print.
+12. rent
+You already have a harness rented
+13. s
+This is a road. It runs north-to-south.
+14. s
+This is a road. It runs north-to-south.
+15. e
+A nice, scenic trail. It runs east-to-west.
+There is a zip-line you can 'clip' or 'attach' to.
+16. n
+You can't move in that direction
+17. s
+You can't move in that direction
+18. e
+AHHHH! It seems you've forgotten to attach your zip harness to the line.
+[sad violin plays].
+You have 0 points.
+This is a road. It runs north-to-south. Your car is parked nearby.
+19. n
+This is a road. It runs north-to-south.
+20. e
+A nice, scenic trail. It runs east-to-west.
+There is a zip-line you can 'clip' or 'attach' to.
+21. e
+AHHHH! You've fallen to your death down a deep gorge. [sad violin plays].
+You have -25 points.
+This is a road. It runs north-to-south. Your car is parked nearby.
+22. e
+Very thick jungle. You can only really maneuver east or west.
+23. e
+AHHHH! You've fallen to your death down a deep gorge. [sad violin plays].
+You have -50 points.
+This is a road. It runs north-to-south. Your car is parked nearby.
+24. n
+This is a road. It runs north-to-south.
+25. n
+This is a road. It runs north-to-south.
+26. n
+Hey! A zip-line rental shop. Sounds like a good way to spend your afternoon.
+A sign instructs you to 'rent'.
+27. rent
+You sign a 56-page rental agreement in exchange for the zip-line equipment.
+There's a strict 10-tile rental term according to the fine print.
+28. s
+This is a road. It runs north-to-south.
+29. s
+This is a road. It runs north-to-south.
+30. e
+A nice, scenic trail. It runs east-to-west.
+There is a zip-line you can 'clip' or 'attach' to.
+31. clip
+You clip your harness onto the zip line.
+32. e
+WOOO! You zip across the gorge and safely arrive at the trail on the other side.
+A nice, scenic trail. It runs east-to-west.
+There is a zip-line you can 'clip' or 'attach' to.
+33. e
+This is a road. It runs north-to-south.
+34. n
+This is a road. It runs north-to-south.
+35. n
+This is a road. It runs north-to-south.
+36. n
+This is a road. It runs north-to-south.
+37. s
+RIIING! You get an angry phone call from the manager of the zip-line rental.
+He says a collection agency has garnished 25 of your points.
+This is a road. It runs north-to-south.
+38. s
+This is a road. It runs north-to-south.
+39. s
+This is a road. It runs north-to-south.
+40. s
+It's another shop that accepts equipment returns on behalf of the first shop.
+A sign instructs you to 'return'.
+41. return
+You return the zip-line equipment and leave the shop. What a fun afternoon!
+You've finished the game! You have 25 points.
+Press any key to exit
+42. <any-key>
