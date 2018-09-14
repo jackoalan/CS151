@@ -1,4 +1,4 @@
-#include "AdventureGame.hpp"
+#include "AdventureGame.h"
 #include <iostream>
 
 using namespace std;
