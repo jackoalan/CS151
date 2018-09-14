@@ -1,5 +1,6 @@
 #include "AdventureGame.h"
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -67,6 +68,10 @@ void Shop1::look(const Game& game) const
 bool Shop1::command(Game& game, const string& line) const
 {
   if (CompareEquals(line, "rent")) {
+    if (game.player().hasHarness()) {
+      cout << "You already have a harness rented" << endl;
+      return true;
+    }
     cout << "You sign a 56-page rental agreement in exchange for the zip-line equipment.\n"
             "There's a strict 10-tile rental term according to the fine print." << endl;
     game.player().setHasHarness(true);
@@ -358,5 +363,7 @@ int main(int argc, char** argv)
   AdventureGame::Game game;
   game.start();
   while (game.proc()) {}
+  cout << "Press any key to exit" << endl;
+  cin.get();
   return 0;
 }
