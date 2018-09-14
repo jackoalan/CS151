@@ -1,0 +1,92 @@
+Text-based Adventure Game - Planning
+====================================
+
+The game map consists of a 5x5 grid, with a 500ft gorge cut through the middle cells
+north-to-south. There are two roads on the opposite ends of the map, also running
+north-to-south. Thick jungle separates the gorge from the roads, with two single tiles
+providing trail access on either side. A zip-line connects the two trail tiles over the
+gorge, but the player must interact with the line correctly, or they will fall to their
+death.
+
+|------|------|------|------|------|
+|      |      |      |      |      |
+| Road |Jungle|Gorge |Jungle| Road |
+|      |      |      |      |      |
+|------|------|------|------|------|
+|      |      |      |      |      |
+|Shop1 |Jungle|Gorge |Jungle| Road |
+|      |      |      |      |      |
+|------|------|------|------|------|
+|      |      |      |      |      |
+| Road |Jungle|Gorge |Jungle| Road |
+|      |      |      |      |      |
+|------|------|------|------|------|
+|      |      |      |      |      |
+| Road |Trail | Zip  |Trail | Road |
+|      |      |      |      |      |
+|------|------|------|------|------|
+|      |      |      |      |      |
+|Start |Jungle|Gorge |Jungle|Shop2 |
+|      |      |      |      |      |
+|------|------|------|------|------|
+
+
+The character must cross the gorge by renting a zip-line harness from a shop a few tiles
+north on the west road, find the zip-line, strap on the harness, hook on, and zip across.
+Each one of these actions must be explicitly issued for the player to succeed.
+Additionally, the player must return the harness to the shop on the other side, or they
+will start getting annoying calls from a collection agency and lose points if they
+traverse more than 10 tiles. Once the player reaches the 2nd shop and pays their bill,
+the game ends.
+
+Architecture
+------------
+
+The game system will be managed by a Game class that stores the 5x5 Cell structure of the
+map and the Player instance. The Cell superclass provides common actions such as
+directional movement and abstract interfaces for actions like fetching the description
+string for the "look" command, and any action that should occur on the player's arrival.
+The Player instance will store X,Y coordinates, inventory flag for the zip harness, equip
+flag for when the harness is strapped on, and number of tiles traversed with the harness
+in inventory.
+
+- Game
+    - Fields
+        - Cell* cells[5][5];
+        - Player* player;
+    - Methods
+        - Game(); /* Constructs Cell instances implementing the map and Player */
+            - precond: game has begun execution
+            - postcond: game is ready to play
+- Cell (superclass)
+    - Methods
+        - virtual int DirFlags() = 0; /* Returns bitmask of valid movement directions */
+            - precond: cell has been constructed
+            - postcond: no change, flags returned
+        - virtual void Look() = 0; /* "Look" command, which will print a string */
+            - precond: cell has been constructed
+            - postcond: no change, string printed
+        - virtual void Arrive(Player&) = 0; /* Called when moving into cell */
+            - precond: cell has been constructed
+            - postcond: consequential methods (if any) called into player
+    - Subclasses
+        - Start (subclass of Road)
+        - Road
+        - Shop1
+        - Shop2
+        - Jungle
+        - Gorge
+        - Trail
+        - Zip
+- Player
+    - Fields
+        - int x, y;
+        - int tilesWithHarness;
+        - bool hasHarness, equipHarness;
+    - Methods
+        - Player(); /* Initializes state in start cell */
+            - precond: game is being constructed
+            - postcond: player is ready to perform commands
+        - DoCmd(string); /* Received typed command and performs prescribed action */
+            - precond: game, player, and cells have been constructed, player in previous state
+            - postcond: player in new state
